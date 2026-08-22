@@ -1,0 +1,30 @@
+services:
+  nuxbill:
+    container_name: nuxbill
+    pull_policy: always
+    build: ./
+    restart: unless-stopped
+    ports:
+      - "8084:80"
+    environment:
+      TZ: Africa/Nairobi
+    depends_on:
+      - mysql
+
+  mysql:
+    container_name: mysql
+    image: mysql:8.0
+    environment:
+      MYSQL_ROOT_PASSWORD: "Trexzen@1"
+      MYSQL_DATABASE: "nuxbill"
+      MYSQL_USER: "nuxbill"
+      MYSQL_PASSWORD: "Trexzen@1"
+    ports:
+      - "3306:3306"
+
+# skip data persistance (if dev testing)
+#     volumes:
+#       - mysql_data:/var/lib/mysql
+
+# volumes:
+#   mysql_data:
