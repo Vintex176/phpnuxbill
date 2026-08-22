@@ -16,7 +16,7 @@ $db_host    = "localhost"; # Database Host
 $db_port    = "3306";   # Database Port. Keep it blank if you are un sure.
 $db_user    = "nuxbill"; # Database Username
 $db_pass    = "Trexzen@1"; # Database Password
-$db_name    = "phpnuxbill"; # Database Name
+$db_name    = "nuxbill"; # Database Name
 
 
 
